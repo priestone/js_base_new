@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제2</title>
+
+    <script>
+
+        // *문제
+        // =>입력한 숫자가 짝수면 짝수입니다.
+        // =>입력한 숫자가 홀수면 홀수 입니다.
+
+        // alert("우왕");
+        const gameStrart = confirm("홀짝게임을 시작합니다.");
+
+        if(gameStrart){
+            alert("환영합니다.");
+        }else{
+            alert("노잼");
+            close(window);
+        }
+
+
+
+        const num_1 = Number(prompt("숫자를 입력해주세요."));
+
+        if( (num_1 % 2) === 1 ){
+            document.write("<h2>입력한 숫자가 홀수입니다.</h2>");
+        }else if((num_1 % 2) === 0){
+            document.write("<h2>입력한 숫자가 짝수입니다.</h2>");
+        }else{
+            document.write("<h2>문자가 입력되었습니다.</h2>");
+        }
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

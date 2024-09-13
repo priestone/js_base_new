@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제1</title>
+
+    <script>
+
+        // *문제
+        // =>구구단 5단 출력
+
+        // ***출력결과***
+        // 5단
+        // 5x1=5
+        // 5x2=10
+        // 5x3=15
+        // 5x4=20
+        // 5x5=25
+
+
+        // -------------------풀이---------------------------
+        
+        // document.write("5단 <br>");
+        // for(let i = 1; i < 10; i++){
+        //     document.write(`5x${i}=${5*i}<br>`);
+        // }
+
+
+
+
+
+
+        // const num = Number(prompt("숫자를 입력해주세요."));
+
+        // document.write(`${num}단<br>`)
+        // for(let i = 1; i <= 9; i++){
+        //     document.write(`${num}x${i}=${num*i}<br>`);
+        // }
+
+        // -------------------풀이---------------------------
+
+
+        // document.write("5단<br>")
+        // for(let g = 1; g < 10; g++){
+        //     document.write("5x" + g + "=" + (g * 5) + "<br>");
+        // }
+
+        // let a = Number(prompt("숫자를 입력해주세요"));
+
+        // for(let g = 1; g < 10; g++){
+        //     document.write( a + "x" + g + "=" + (g * a) + "<br>");
+        // }
+        
+        // if( a < 10){
+        //     for(let g = 1; g < 10; g++){
+        //     document.write( a + "x" + g + "=" + (g * a) + "<br>");
+        // }
+        // }else if( a >=10 ){
+        //     document.write("<h2> 9이하의 숫자를 입력해주세요.</h2>");
+        // }else if( a < 1){
+        //     document.write("<h2>자연수만 입력해주세요.</h2>")
+        // }
+        // else {
+        //     document.write("<h2>숫자만 입력해주세요.</h2>")
+        // }
+
+        // *문제 3
+        // =숫자를 입력하여 입력한 숫자가 홀수인지 짝수인지 판단 후
+        // 홀수면 홀수단만 곱하고
+        // 짝수면 짝수단만 곱하기
+
+        // let a = Number(prompt("숫자를 입력해주세요"));
+
+        // if((a % 2) == 1 ){
+        //     for(let g = 1; g < 10; g+=2){
+        //     document.write( a + "x" + g + "=" + (g * a + "<br>"));
+        // }
+        // }else if((a % 2) === 0 ){
+        //     for(let g = 2; g < 10; g+=2){
+        //     document.write( a + "x" + g + "=" + (g * a + "<br>"));
+        // }
+        // }else{
+        //     document.write("<h2>숫자만 입력해주세요.</h2>")
+        // }
+
+        
+        // 3 풀이
+
+        const num = Number(prompt("숫자를 입력해주세요."));
+        const result = num % 2;
+        
+        if(result === 0){
+            document.write(`${num}단 <br>`)
+            for(let i = 2; i < 10; i+=2){
+                document.write(` ${num} x ${i} x = ${num * i} <br>`)
+            }
+        }else if(result === 1){
+            document.write(`${num}단 <br>`)
+            for(let i = 1; i < 10; i+=2){
+                document.write(` ${num} x ${i} x = ${num * i} <br>`)
+            }
+        }else {
+            document.write("양수만 입력해주세요");
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
