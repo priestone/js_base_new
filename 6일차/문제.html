@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제</title>
+    <script>
+
+        // *문제
+        // 1. 객체 하나 제작
+        // 2. 주제는 유저 정보를 저장하는 객체
+        // 3. 객체 속성은 username, email profileImg 사용
+        // 4. 속성에 맞게 속성값 지정
+
+        // **출력결과**
+
+        // ###유저정보###
+        // 유저 아이디 : JavaScript
+        // 이메일 : Java@script.com
+        // profileImg : js.jpg
+
+        // =>write를 사용할것
+        // =>h2 태그도 사용할것
+
+        // const obj = {
+        //     username : "JavaScript",
+        //     email : "Java@script.com",
+        //     profileImg : "js.jpg",
+        //     intro : function(){ 
+        //         document.write(`<h2>###유저정보###</h2>`);
+        //         document.write(`<h2>유저 아이디 : ${this.username}</h2>`);
+        //         document.write(`<h2>이메일 : ${this.email}</h2>`);
+        //         document.write(`<h2>profileImg : ${this.profileImg}</h2>`);
+        //     }
+        // };
+
+        // obj.intro();
+
+
+
+        // --------------------풀이-----------------------
+
+            // const user = {
+            //     id: 0,
+            //     username : "JavaScript",
+            //     email : "Java@script.com",
+            //     profileImg : "js.jpg",
+            // }
+
+            // document.write(`<h2>##유저정보##</h2>`)
+            // document.write(`<h2>유저 아이디 : ${user.username}</h2>`)
+            // document.write(`<h2>이메일 : ${user.email}</h2>`)
+            // document.write(`<h2>profileImg : ${user.profileImg}</h2>`)
+
+
+        // --------------------풀이-----------------------
+
+
+        // const item = {
+        //     이름 : "Nature of Code",
+        //     가격 : "30000원",
+        //     저자 : "Deniel Shifman",
+        //     ISBM : 9788968481901,
+        //     페이지 : 620,
+        //     pub : function(){
+        //         document.write(`이름 : ${this.이름}<br>`);
+        //         document.write(`가격 : ${this.가격}<br>`);
+        //         document.write(`저자 : ${this.저자}<br>`);
+        //         document.write(`ISBM : ${this.ISBM}<br>`);
+        //         document.write(`페이지 : ${this.페이지}<br>`);
+        //     }
+        // }
+
+        // item.pub();
+
+
+        // *문제2
+        // =>prompt를 사용하여 자기 소개 출력
+        // =>객체, 메서드, this 활용
+
+        // ##출력결과##
+        // 이름 : 이정환
+        // 주 언어 : 영어
+        // 취미 : 영어
+
+        // const name = prompt("이름을 입력해주세요");
+        // const lang = prompt("주 언어를 입력해주세요");
+        // const hob = prompt("취미를 입력해주세요");
+        
+        // const intro = {
+        //     id : 0,
+        //     이름 : name,
+        //     주언어 : lang,
+        //     취미 : hob,
+        //     userIntro : function(){
+        //         document.write(`<h2>이름 : ${this.이름}</h2>`);
+        //         document.write(`<h2>주 언어 : ${this.주언어}</h2>`);
+        //         document.write(`<h2>취미 : ${this.취미}</h2>`);
+        //     }
+        // }
+
+        // intro.userIntro();
+
+        // --------------------------------------------------------------
+
+        const userInfo = {
+            id : 0,
+            username : "test",
+            password : "123",
+
+        }
+
+        // *문제
+        // =>위 객체를 이용하여
+        // 로그인 구현
+        // =>입력한 값이 저장된 아이디랑 다르면 아이디 틀림
+        // =>입력한 값이 저장된 패스워드랑 다르면 패스워드 틀림
+        // =>둘다 맞으면 로그인 되었습니다 라고 출력
+
+        const Id = prompt("아이디를 입력해주세요");
+        const password = prompt("패스워드를 입력해주세요");
+
+        if(Id != userInfo.username){
+            document.write("<h2>아이디 틀림</h2>");
+        }else if(password != userInfo.password){
+            document.write("<h2>패스워드 틀림</h2>");
+        }else{
+            document.write("<h2>로그인 되었습니다.</h2>"); 
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
