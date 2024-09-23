@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제1</title>
+    <script>
+
+        // *문제
+        // =>배열 생성 -> 배열 내부에 객체 4개 생성
+        // =>객체 내부에는 고유값, 아이디, 이메일, 프사
+        // =>배열에 저장된 4명의 유저를 브라우저에 출력하기 (반복문 사용)
+
+        // const user01 = {
+        //     id : 0,
+        //     username : "짱구",
+        //     email : "jg.com",
+        //     profile : "red",
+        //     intro : function(){
+        //         document.write(`<h2>${this.id}번째 유저</h2>`);
+        //         document.write(`아이디 : ${this.username}<br>`);
+        //         document.write(`이메일 : ${this.email}<br>`);
+        //         document.write(`프사 : ${this.profile}<br>`);
+        //     }
+        // };
+
+        // const user02 = {
+        //     id : 1,
+        //     username : "철수",
+        //     email : "jg.com",
+        //     profile : "blue",
+        //     intro : function(){
+        //         document.write(`<h2>${this.id}번째 유저</h2>`);
+        //         document.write(`아이디 : ${this.username}<br>`);
+        //         document.write(`이메일 : ${this.email}<br>`);
+        //         document.write(`프사 : ${this.profile}<br>`);
+        //     }
+        // };
+
+        // const user03 = {
+        //     id : 2,
+        //     username : "훈이",
+        //     email : "jg.com",
+        //     profile : "green",
+        //     intro : function(){
+        //         document.write(`<h2>${this.id}번째 유저</h2>`);
+        //         document.write(`아이디 : ${this.username}<br>`);
+        //         document.write(`이메일 : ${this.email}<br>`);
+        //         document.write(`프사 : ${this.profile}<br>`);
+        //     }
+        // };
+
+        // const user04 = {
+        //     id : 3,
+        //     username : "맹구",
+        //     email : "jg.com",
+        //     profile : "yellow",
+        //     intro : function(){
+        //         document.write(`<h2>${this.id}번째 유저</h2>`);
+        //         document.write(`아이디 : ${this.username}<br>`);
+        //         document.write(`이메일 : ${this.email}<br>`);
+        //         document.write(`프사 : ${this.profile}<br>`);
+        //     }
+        // };
+
+        // const users = [user01, user02, user03, user04];
+
+        // for(let i = 0; i < 4; i++){
+        //     users[i].intro();
+        // };
+
+        // ----------------------풀이----------------------
+
+        const users = [
+            {
+                id: 0,
+                username: "js",
+                email: "js@js.com",
+                avatar: "js.jpg"
+            },
+            {
+                id: 1,
+                username: "js1",
+                email: "js@js.com1",
+                avatar: "js.jpg1"
+            },
+            {
+                id: 2,
+                username: "js2",
+                email: "js@js.com2",
+                avatar: "js.jpg2"
+            },
+            {
+                id: 3,
+                username: "js3",
+                email: "js@js.com3",
+                avatar: "js.jpg3"
+            }
+        ];
+
+        // document.write(`${users[0].id}번째 유저 <br>`);
+        // document.write(`아이디 : ${users[0].username} <br>`);
+        // document.write(`이메일 : ${users[0].email} <br>`);
+        // document.write(`프사 : ${users[0].avatar} <br>`);
+
+        for(let i = 0; i < users.length; i ++){
+        document.write(`<br>${users[i].id}번째 유저 <br>`);
+        document.write(`아이디 : ${users[i].username} <br>`);
+        document.write(`이메일 : ${users[i].email} <br>`);
+        document.write(`프사 : ${users[i].avatar} <br>`);
+        document.write("---------------------------------");
+        }
+
+
+
+
+        // ----------------------풀이----------------------
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
