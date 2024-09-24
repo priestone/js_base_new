@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습</title>
+</head>
+<body>
+
+    <div class="con_wrap"></div>
+
+    <script>
+
+        const data = [
+            {
+                id : 0,
+                text : "THis is title",
+                desc : "이것은 개쩌는 상품입니다",
+            },
+            {
+                id : 0,
+                text : "THis is title",
+                desc : "이것은 개쩌는 상품입니다"
+            },
+            {
+                id : 0,
+                text : "THis is title",
+                desc : "이것은 개쩌는 상품입니다"
+            }
+        ]
+        
+        const conWrapEl = document.querySelector(`.con_wrap`);
+        
+        for(let i = 0; i <data.length; i++){
+            const conEl = document.createElement(`div`);
+            const titleEl = document.createElement(`h3`);
+            const descEl = document.createElement(`p`);
+            conEl.classList.add(`con`);
+
+            titleEl.innerText = data[i].text
+            descEl.innerText = data[i].desc
+            conEl.append(titleEl);
+            conEl.append(descEl);
+            console.log(conEl);
+
+            conWrapEl.append(conEl);
+        }
+
+
+
+
+    </script>
+    
+</body>
+</html>

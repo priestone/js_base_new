@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제</title>
+</head>
+<body>
+
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+
+    <script>
+
+        // *문제
+        // =>innerHTML 이용하여
+        // =>.con 자식으로 h3태그 만들기
+
+        const conAll = document.querySelectorAll(`.con`);
+        
+        // conAll[0].innerHTML = "<h3>1</h3>";
+
+        for(let i = 0; i < 10; i++){
+            conAll[i].innerHTML = `<h3>${i + 1}</h3>`;
+        }
+
+
+        // 1.컨텐츠 선택하기
+        // 2.컨텐츠 안에 h3 넣기
+        // 3.h3 숫자 1 ~ 10까지 만들기
+
+        // *필요 도구
+        // =>document.querySelectorAll()
+        // =>innerHTML, for
+
+
+    </script>
+    
+</body>
+</html>
