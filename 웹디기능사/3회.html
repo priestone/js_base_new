@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.js"></script>
+    <script src="script.js" defer type="text/javascript"></script>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul,li{
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+            color: #1d1d1d;
+        }
+
+        header{
+            width: 1200px;
+            height: 100px;
+            display: flex;
+            margin: 0 auto;
+            background-color: lightskyblue;
+        }
+
+        .logo{
+            width: 400px;
+            height: 100px;
+        }
+
+        #menu_bg{
+            width: 1200px;
+            height: 160px;
+            position: absolute;
+            display: none;
+            z-index: 2;
+            top: 100px;
+            background-color: #bbb;
+        }
+
+        .menu{
+            width: 800px;
+            height: 1000px;
+            z-index: 1;
+        }
+
+        .navi{
+            margin-top: 50px;
+            margin-right: 0px;
+        }
+
+        .navi>li{
+            float: left;
+        }
+
+        .navi>li>a{
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navi>li>a:hover{
+            background-color: royalblue;
+        }
+
+        .submenu{
+            width: 200px;
+            height: 40px;
+            position: absolute;
+            display: none;
+            z-index: 3;
+            background-color: #bbb;
+        }
+
+        .submenu>li>a:hover{
+            background-color: royalblue;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+
+        <header>
+
+            <div class="logo"></div>
+            <div id="menu_bg"></div>
+            <nav class="menu">
+
+                <ul class="navi">
+
+                    <li><a href="#">해외여행</a>
+                        <ul class="submenu">
+                            <li><a href="#">동남아/대만</a></li>
+                            <li><a href="#">중국/홍콩</a></li>
+                            <li><a href="#">유럽/두바이</a></li>
+                            <li><a href="#">미주/하와이</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">국내여행</a>
+                        <ul class="submenu">
+                            <li><a href="#">서울/경기</a></li>
+                            <li><a href="#">강원</a></li>
+                            <li><a href="#">충청</a></li>
+                            <li><a href="#">경상/전라</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">해제주도</a>
+                        <ul class="submenu">
+                            <li><a href="#">버스여행</a></li>
+                            <li><a href="#">자유여행</a></li>
+                            <li><a href="#">호텔/펜션</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">렌터카</a>
+                        <ul class="submenu">
+                            <li><a href="#">국내 렌터카</a></li>
+                            <li><a href="#">국외 렌터카</a></li>
+                        </ul>
+                    </li>
+
+
+
+                </ul>
+
+            </nav>
+
+        </header>
+
+    </div>
+    
+</body>
+</html>
