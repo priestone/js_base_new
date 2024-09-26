@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box_wrap{
+            width: 1000px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #1d1d1d;
+        }
+
+        /* .box:nth-child(1){
+            background-color: red;
+        }
+
+        .box:nth-child(2){
+            background-color: blue;
+        }
+
+        .box:nth-child(3){
+            background-color: yellow;
+        } */
+
+        .box.red{
+            background-color: red;
+        }
+
+        .box.blue{
+            background-color: blue;
+        }
+
+        .box.yellow{
+            background-color: yellow;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="box_wrap">
+        <div class="box">빨강</div>
+        <div class="box">파랑</div>
+        <div class="box">노랑</div>
+    </div>
+
+    <script>
+
+        const boxWrapEl = document.querySelector(`.box_wrap`);
+        const boxEl = document.querySelector(`.box`);
+
+        // const handleClick = (e) => {
+        //     if(e.target.classList.contains(`box`)){
+        //         e.target.classList.toggle(`green`);
+        //     }
+        // }
+
+        const colors = [
+            {
+                id:0,
+                color:"red",
+                plus: function(){
+                    boxEl.classList.add(`red`);
+                }
+            },
+            {
+                id:0,
+                color:"blue",
+                plus: function(){
+                    boxEl.classList.add(`blue`);
+                }
+            },
+            {
+                id:0,
+                color:"yellow",
+                plus: function(){
+                    boxEl.classList.add(`yellow`);
+                }
+            }
+        ]
+        
+        const handleClick = (e) => {
+            if(e.target.classList.contains(`box`)){
+                e.target.classList.add(colors[0].color);
+            }else if(e.target.classList.contains(`box`)){
+                e.target.classList.add(colors[1].color);
+            }
+        }
+
+        boxWrapEl.addEventListener(`click`, handleClick)
+
+    </script>
+    
+</body>
+</html>
