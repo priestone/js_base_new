@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>햄버거 연습</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul,li{
+            list-style: none;
+        }
+
+        .wrap{
+            max-width: 480px;
+            height: 100vh;
+            width: 100%;
+            margin: 0 auto;
+            border: 10px solid black;
+            position: relative;
+        }
+
+        .hambuger{
+            position: absolute;
+            top: 0px;
+            right: 20px;
+            font-size: 40px;
+            font-weight: 900;
+            cursor: pointer;
+            /* background-color: lightblue; */
+            transition: 0.3s;
+        }
+
+        .hambuger.active{
+            transform: translateX(-120px);
+        }
+
+        .menu{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: lightblue;
+            height: 300px;
+            transform: translateX(150px);
+            transition: 0.3s;
+            /* display: none; */
+        }
+
+        .menu li{
+            padding: 10px;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .menu.active{
+            transform: translateX(0);
+            /* display: block; */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+
+        <div class="hambuger">=</div>
+
+        <ul class="menu">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JAVA SCRIPT</li>
+        </ul>
+
+    </div>
+
+    <script>
+        const hambugerEl = document.querySelector(`.hambuger`);
+        const menuEl = document.querySelector(`.menu`);
+
+        const slideIn = () => {
+            hambugerEl.classList.toggle(`active`);
+            menuEl.classList.toggle(`active`);
+        }
+
+        const slideOut = () => {
+            menuEl.classList.remove(`active`);
+            hambugerEl.classList.remove(`active`);
+        }
+
+        hambugerEl.addEventListener(`click`,slideIn);
+        // hambugerEl.addEventListener(`click`,slideOut);
+    </script>
+    
+</body>
+</html>
