@@ -22,6 +22,52 @@
             margin-bottom: 20px;
         }
 
+        .user_bar{
+            padding: 0 10px;
+            width: 100%;
+            height: 50px;
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .user_img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: lightgray;
+            margin-right: 20px;
+        }
+
+        .con{
+            width: 100%;
+            height: 400px;
+        }
+
+        .bottom_bar{
+            padding: 10px 20px;
+            width: 100%;
+            height: 50px;
+            border-top: 1px solid black;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .active{
+            color: red;
+            background-color: red;
+        }
+
+        .fa-heart.fa-solid{
+            color: red;
+        }
+
+        span{
+            margin: 0 10px;
+        }
+
         
 
     </style>
@@ -35,13 +81,17 @@
                 <div class="user_img">
                     <img src="" alt="">
                 </div>
-                <p>user 1</p>
+                <h4>user 1</h4>
             </div>
             <div class="con">
                 <img src="" alt="">
             </div>
             <div class="bottom_bar">
-                <i class="fa-regular fa-heart"></i>
+                <div class="like">
+                    <i class="fa-regular fa-heart" ></i>
+                </div>
+                <span>좋아요</span>
+                <p>0</p>
             </div>
         </div>
 
@@ -50,32 +100,168 @@
                 <div class="user_img">
                     <img src="" alt="">
                 </div>
-                <p>user 1</p>
+                <h4>user 2</h4>
             </div>
             <div class="con">
                 <img src="" alt="">
             </div>
             <div class="bottom_bar">
-                <i class="fa-regular fa-heart"></i>
+                <div class="like">
+                    <i class="fa-regular fa-heart" ></i>
+                </div>
+                <span>좋아요</span>
+                <p>0</p>
             </div>
         </div>
 
         <div class="con_wrap">
+
+
             <div class="user_bar">
                 <div class="user_img">
                     <img src="" alt="">
                 </div>
-                <p>user 1</p>
+                <h4>user 3</h4>
             </div>
+
+
             <div class="con">
                 <img src="" alt="">
             </div>
+
+
             <div class="bottom_bar">
-                <i class="fa-regular fa-heart"></i>
+                <div class="like">
+                    <i class="fa-regular fa-heart" ></i>
+                </div>
+                <span>좋아요</span>
+                <p>0</p>
             </div>
+
         </div>
 
     </div>
+
+    <script>
+
+        const likeEl = document.querySelectorAll(`.like`);
+        const fullEl = document.querySelector(`.fa-solid`);
+        const regEl = document.querySelector(`.fa-regular`);
+        const colorEl = document.querySelectorAll(`.fa-regular`)
+        const textEl = document.querySelectorAll(`p`);
+
+        let num = 0
+        
+        
+
+        // const clickHandler01 = (e) => {
+        //     colorEl[0].classList.toggle(`fa-regular`);
+        //     colorEl[0].classList.toggle(`fa-solid`);
+
+        //     if(colorEl[0].classList.contains(`fa-solid`)){
+        //         textEl[0].innerText = num ++;
+        //     }else{
+        //         textEl[0].innerText = num --;
+        //     }
+        // };
+
+
+        // const clickHandler01 = () => {
+        //     colorEl[0].classList.toggle(`fa-regular`);
+        //     colorEl[0].classList.toggle(`fa-solid`);
+
+        //     if(colorEl[0].classList.contains(`fa-solid`)){
+        //         num++;
+        //     }else{
+        //         num--;
+        //     };
+        //     textEl[0].innerText = num;
+        // };
+
+        // const clickHandler02 = () => {
+        //     colorEl[1].classList.toggle(`fa-regular`);
+        //     colorEl[1].classList.toggle(`fa-solid`);
+
+        //     if(colorEl[1].classList.contains(`fa-solid`)){
+        //         num++;
+        //     }else{
+        //         num--;
+        //     };
+        //     textEl[1].innerText = num;
+        // };
+
+
+        // for(let i = 0; i < likeEl.length; i++){
+        //     const clickHandler01 = () => {
+        //     colorEl[i].classList.toggle(`fa-regular`);
+        //     colorEl[i].classList.toggle(`fa-solid`);
+
+        //     if(colorEl[i].classList.contains(`fa-solid`)){
+        //         num+= 1;
+        //     }else{
+        //         num-= 1;
+        //     };
+        //     textEl[i].innerText = num;
+            
+        // }
+        // likeEl[i].addEventListener(`click`,clickHandler01);
+        // };
+
+        let user =[
+            {
+                id : "손흥민",
+                like : 0
+            },
+            {
+                id: "봉준호",
+                like: 110
+            },
+            {
+                id : "BTS",
+                like : 550
+            }
+        ]
+
+        const likeEls = document.querySelectorAll('.like');
+        const textEls = document.querySelectorAll('p');
+        const userEls = document.querySelectorAll('h4');
+
+        textEls[0].innerText = user[0].like;
+        textEls[1].innerText = user[1].like;
+        textEls[2].innerText = user[2].like;
+
+        userEls[0].innerText = user[0].id;
+        userEls[1].innerText = user[1].id;
+        userEls[2].innerText = user[2].id;
+
+        for (let i = 0; i < likeEls.length; i++) {
+
+            let num = 0;
+
+            likeEls[i].addEventListener('click', () => {
+                const heartEl = document.querySelectorAll('.fa-heart'); 
+
+                heartEl[i].classList.toggle('fa-regular');
+                heartEl[i].classList.toggle('fa-solid');
+
+                if (heartEl[i].classList.contains('fa-solid')) {
+                    user[i].like ++;
+                } else {
+                    user[i].like --;
+                }
+                textEls[i].innerText = user[i].like;
+            });
+        };
+
+        
+        
+        // likeEl[0].addEventListener(`click`,clickHandler01);
+        // likeEl[1].addEventListener(`click`,clickHandler02);
+        // likeEl[2].addEventListener(`click`,clickHandler03);
+        
+
+
+    </script>
     
 </body>
 </html>
