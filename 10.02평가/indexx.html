@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .wrap.dark{
+            background-color: #555;
+        }
+
+        .con_wrap{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 0 auto;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .con_wrap:last-child{
+            margin-bottom: 0;
+        }
+
+        .con_wrap.dark{
+            border: 1px solid white;
+        }
+
+        .user_bar{
+            padding: 0 10px;
+            width: 100%;
+            height: 50px;
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .user_bar.dark{
+            border-bottom: 1px solid white;
+        }
+
+        .user_img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: lightgray;
+            margin-right: 20px;
+        }
+
+        .con{
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .bottom_bar{
+            padding: 10px 20px;
+            width: 100%;
+            height: 50px;
+            border-top: 1px solid black;
+            display: flex;
+            align-items: center;
+        }
+
+        .bottom_bar.dark{
+            border-top: 1px solid white;
+        }
+
+        .active{
+            color: red;
+            font-weight: 900;
+        }
+
+        /* .fa-heart.fa-solid{
+            color: red;
+        } */
+
+        span{
+            margin: 0 10px;
+        }
+
+        .toggle_btn{
+            width: 60px;
+            height: 35px;
+            background-color: #555;
+            border-radius: 50px;
+            position: relative;
+            position: fixed;
+        }
+
+        .one_btn{
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 2.5px;
+            left: 2.5px;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .toggle_btn.to_btn{
+            background-color: lightgreen;
+        }
+
+        .toggle_btn.to_btn .one_btn{
+            left: 27.5px;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+
+        <div class="toggle_btn">
+            <div class="one_btn"></div>
+        </div>
+
+
+        <div class="con_wrap">
+            <div class="user_bar">
+                <div class="user_img"></div>
+                <h4>user 1</h4>
+            </div>
+
+            <div class="con"></div>
+
+            <div class="bottom_bar">
+                <i class="fa-regular fa-heart" ></i>
+                <span>좋아요</span>
+                <p>0</p>
+            </div>
+        </div>
+
+        <div class="con_wrap">
+            <div class="user_bar">
+                <div class="user_img"></div>
+                <h4>user 2</h4>
+            </div>
+
+            <div class="con"></div>
+
+            <div class="bottom_bar">
+                <i class="fa-regular fa-heart" ></i>
+                <span>좋아요</span>
+                <p>0</p>
+            </div>
+        </div>
+
+        <div class="con_wrap">
+
+
+            <div class="user_bar">
+                <div class="user_img"></div>
+                <h4>user 3</h4>
+            </div>
+
+            <div class="con"></div>
+
+            <div class="bottom_bar">
+                <i class="fa-regular fa-heart" ></i>
+                <span>좋아요</span>
+                <p>0</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+    <script>
+
+        const toggleEl = document.querySelector(`.toggle_btn`);
+
+        const conwrapEl = document.querySelectorAll(`.con_wrap`);
+        const userBarEl = document.querySelectorAll(`.user_bar`);
+        const bottomEl = document.querySelectorAll(`.bottom_bar`);
+        const wrapEl = document.querySelector(`.wrap`);
+
+        const toggleHandler = (e) => {
+
+            if(e.target.classList.contains(`one_btn`)){
+                e.target.parentNode.classList.toggle(`to_btn`);
+
+                for(let i = 0; i< conwrapEl.length; i++){
+                    conwrapEl[i].classList.toggle(`dark`);
+                    userBarEl[i].classList.toggle(`dark`);
+                    bottomEl[i].classList.toggle(`dark`);
+                };
+
+                wrapEl.classList.toggle(`dark`);
+            }
+
+        }
+
+        toggleEl.addEventListener(`click`, toggleHandler);
+
+// -----------------------------위에는 다크모드-----------------------------------------------
+
+        let user =[
+            {
+                id : "짱구",
+                like : 0,
+                img : "https://upload.wikimedia.org/wikipedia/ko/thumb/4/4a/%EC%8B%A0%EC%A7%B1%EA%B5%AC.png/230px-%EC%8B%A0%EC%A7%B1%EA%B5%AC.png"
+            },
+            {
+                id: "철수",
+                like: 110,
+                img : "https://i.namu.wiki/i/5Veq9acZq3uqIUMsQbKyf4wjHiuk500_e7LUTtdWvG_2m7Wax-Anb5bFATOMsQReegqabE05_P6Swl9h9vUl3g.webp"
+            },
+            {
+                id : "맹구",
+                like : 550,
+                img : "https://i.namu.wiki/i/hWLEwQhnjvdoRZQhrgHMKAZjiSVPO5D86_nBD6OCVLHamm0dM7Ssv2KTfYgjJj-V_X3hMsgV-LeIgI7lmbqzhA.webp"
+            }
+        ];
+
+        const likeEl = document.querySelectorAll(`i`);
+        const numEl = document.querySelectorAll(`p`);
+        const userAll = document.querySelectorAll(`h4`);
+        const conAll = document.querySelectorAll(`.con`);
+        const profileAll = document.querySelectorAll(`.user_img`);
+
+        profileAll[0].innerHTML = `<img src = "${user[0].img}" alr="짱구">`;
+        profileAll[1].innerHTML = `<img src = "${user[1].img}" alr="짱구">`;
+        profileAll[2].innerHTML = `<img src = "${user[2].img}" alr="짱구">`;
+        
+        conAll[0].innerHTML = `<img src = "${user[0].img}" alr="짱구">`;
+        conAll[1].innerHTML = `<img src = "${user[1].img}" alr="짱구">`;
+        conAll[2].innerHTML = `<img src = "${user[2].img}" alr="짱구">`;
+
+
+        userAll[0].innerText = user[0].id;
+        userAll[1].innerText = user[1].id;
+        userAll[2].innerText = user[2].id;
+        
+        numEl[0].innerText = user[0].like;
+        numEl[1].innerText = user[1].like;
+        numEl[2].innerText = user[2].like;
+
+        // let num = 0
+
+        // const clickHandler01 = (e) => {
+
+        //     e.target.classList.toggle(`active`);
+
+        //     if(likeEl[0].classList.contains(`active`)){
+        //         user[0].like ++;
+        //     }else{
+        //         user[0].like --;
+        //     }
+        //     numEl[0].innerText = user[0].like;
+        // };
+
+        // const clickHandler02 = (e) => {
+
+        //     e.target.classList.toggle(`active`);
+
+        //     if(likeEl[1].classList.contains(`active`)){
+        //         user[1].like ++;
+        //     }else{
+        //         user[1].like --;
+        //     }
+        //     numEl[1].innerText = user[1].like;
+        // };
+
+        // const clickHandler03 = (e) => {
+
+        //     e.target.classList.toggle(`active`);
+
+        //     if(likeEl[3].classList.contains(`active`)){
+        //         user[3].like ++;
+        //     }else{
+        //         user[3].like --;
+        //     }
+        //     numEl[3].innerText = user[3].like;
+        //     };
+
+        // likeEl[0].addEventListener(`click`,clickHandler01);
+        // likeEl[1].addEventListener(`click`,clickHandler02);
+        // likeEl[2].addEventListener(`click`,clickHandler03);
+
+// -----------------------------구린버전-----------------------------------
+
+        for(let i = 0; i < likeEl.length; i++){
+
+            likeEl[i].addEventListener(`click`,(e)=>{
+                e.target.classList.toggle(`active`);
+
+                if(likeEl[i].classList.contains(`active`)){
+                    user[i].like ++;
+                }else{
+                    user[i].like --;
+                };
+
+                numEl[i].innerText = user[i].like;
+            });
+
+        };
+
+    </script>
+    
+</body>
+</html>
