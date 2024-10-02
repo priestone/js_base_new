@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>index</title>
+</head>
+<body>
+
+    <div class="wrap">
+
+        <div class="con_wrap">
+            <div class="top_bar">
+                <div class="user_img"></div>
+                <h4></h4>
+                <div class="hambuger">
+                    <div class="ham_bar"></div>
+                    <div class="ham_bar"></div>
+                    <div class="ham_bar"></div>
+                </div>
+                <div class="menu_wrap">
+                    <h3>MENU01</h3>
+                    <h3>MENU02</h3>
+                    <h3>MENU03</h3>
+                </div>
+            </div>
+
+            <div class="con"></div>
+
+            <div class="bottom_bar">
+                <i class="fa-regular fa-heart" ></i>
+                <!-- <span>좋아요</span>
+                <p>0</p> -->
+            </div>
+        </div>
+
+        <div class="con_wrap">
+            <div class="top_bar">
+                <div class="user_img"></div>
+                <h4></h4>
+                <div class="hambuger">
+                    <div class="ham_bar"></div>
+                    <div class="ham_bar"></div>
+                    <div class="ham_bar"></div>
+                </div>
+                <div class="menu_wrap">
+                    <h3>MENU01</h3>
+                    <h3>MENU02</h3>
+                    <h3>MENU03</h3>
+                </div>
+            </div>
+
+            <div class="con"></div>
+
+            <div class="bottom_bar">
+                <i class="fa-regular fa-heart" ></i>
+                <!-- <span>좋아요</span>
+                <p>0</p> -->
+            </div>
+        </div>
+
+        <div class="con_wrap">
+            <div class="top_bar">
+                <div class="user_img"></div>
+                <h4></h4>
+                <div class="hambuger">
+                    <div class="ham_bar"></div>
+                    <div class="ham_bar"></div>
+                    <div class="ham_bar"></div>
+                </div>
+                <div class="menu_wrap">
+                    <h3>MENU01</h3>
+                    <h3>MENU02</h3>
+                    <h3>MENU03</h3>
+                </div>
+            </div>
+
+            <div class="con"></div>
+
+            <div class="bottom_bar">
+                <i class="fa-regular fa-heart" ></i>
+                <!-- <span>좋아요</span>
+                <p>0</p> -->
+            </div>
+        </div>
+        
+    </div>
+
+
+    <script>
+
+        const conwrapEl = document.querySelectorAll(`.con_wrap`);
+        const userBarEl = document.querySelectorAll(`.top_bar`);
+        const bottomEl = document.querySelectorAll(`.bottom_bar`);
+
+        let user =[
+            {
+                id : "짱구", 
+                like : 0,
+                img : "https://i.pinimg.com/564x/0d/e9/3b/0de93b31d1fe2861d3e2b56a74aefa46.jpg",
+                profile : "https://upload.wikimedia.org/wikipedia/ko/thumb/4/4a/%EC%8B%A0%EC%A7%B1%EA%B5%AC.png/230px-%EC%8B%A0%EC%A7%B1%EA%B5%AC.png"
+            },
+            {
+                id: "철수",
+                like: 110,
+                img :"https://i.pinimg.com/564x/45/4e/3e/454e3e57c6ec516b18bb8c863cfbd5f9.jpg",
+                profile : "https://i.namu.wiki/i/5Veq9acZq3uqIUMsQbKyf4wjHiuk500_e7LUTtdWvG_2m7Wax-Anb5bFATOMsQReegqabE05_P6Swl9h9vUl3g.webp"
+            },
+            {
+                id : "맹구",
+                like : 550,
+                img : "https://i.pinimg.com/564x/af/07/5a/af075af7de284f369b409bdd61b5f3a5.jpg",
+                profile : "https://i.namu.wiki/i/hWLEwQhnjvdoRZQhrgHMKAZjiSVPO5D86_nBD6OCVLHamm0dM7Ssv2KTfYgjJj-V_X3hMsgV-LeIgI7lmbqzhA.webp"
+            }
+        ];
+
+        const likeEl = document.querySelectorAll(`i`);
+        const numEl = document.querySelectorAll(`p`);
+        const userAll = document.querySelectorAll(`h4`);
+        const conAll = document.querySelectorAll(`.con`);
+        const profileAll = document.querySelectorAll(`.user_img`);
+
+        profileAll[0].innerHTML = `<img src = "${user[0].profile}" alr="짱구프로필">`;
+        profileAll[1].innerHTML = `<img src = "${user[1].profile}" alr="철수프로필">`;
+        profileAll[2].innerHTML = `<img src = "${user[2].profile}" alr="맹구프로필">`;
+        
+        conAll[0].innerHTML = `<img src = "${user[0].img}" alr="짱구이미지">`;
+        conAll[1].innerHTML = `<img src = "${user[1].img}" alr="철수이미지">`;
+        conAll[2].innerHTML = `<img src = "${user[2].img}" alr="맹구이미지">`;
+
+
+        userAll[0].innerText = user[0].id;
+        userAll[1].innerText = user[1].id;
+        userAll[2].innerText = user[2].id;
+        
+        // numEl[0].innerText = user[0].like;
+        // numEl[1].innerText = user[1].like;
+        // numEl[2].innerText = user[2].like;
+        
+        for(let i = 0; i < likeEl.length; i++){
+
+            likeEl[i].addEventListener(`click`,(e)=>{
+                e.target.classList.toggle(`active`);
+
+                // if(likeEl[i].classList.contains(`active`)){
+                //     user[i].like ++;
+                // }else{
+                //     user[i].like --;
+                // };
+
+                // numEl[i].innerText = user[i].like;
+            });
+
+        };
+
+        const hambugerEl = document.querySelectorAll(`.hambuger`);
+        const menuEl = document.querySelectorAll(`.menu_wrap`);
+
+        for(let i = 0; i < hambugerEl.length; i++){
+            hambugerEl[i].addEventListener(`click`,() => {
+                hambugerEl[i].classList.toggle(`move`);
+                menuEl[i].classList.toggle(`move`);
+            });
+        };
+
+    </script>
+    
+</body>
+</html>
