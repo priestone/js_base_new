@@ -96,7 +96,7 @@ img {
         <div class="content"></div>
         <div class="content"></div>
         <div class="content"></div>
-
+        <div class="content"></div>
     </section>
 
     <div class="toggle">
@@ -161,37 +161,46 @@ img {
     const section = document.querySelector(`.section_1`);
 
     const conEl = document.querySelectorAll(`.content`);
+    const toggleEl = document.querySelector(`.toggle`);
 
-    const imgEl = document.createElement(`a`);
-    const infoEl = document.createElement(`info`);
-    const hostEl = document.createElement(`host`);
-    const dateEl = document.createElement(`h3`);
+    toggleEl.addEventListener(`click`,() => {
+      toggleEl.classList.toggle(`active`);
+      section.parentNode.classList.toggle(`body_active`);
+    });
+
+    for(let i = 0; i < conEl.length; i++){
+      const imgEl = document.createElement(`a`);
+      const infoEl = document.createElement(`info`);
+      const hostEl = document.createElement(`host`);
+      const dateEl = document.createElement(`h3`);
+
+      conEl[i].append(imgEl);
+      conEl[i].append(infoEl);
+      conEl[i].append(hostEl);
+      conEl[i].append(dateEl);
+
+      imgEl.innerHTML = `<img src = "${date[i].img}" alt="이미지">`;
+      infoEl.innerHTML = `${date[i].info}`;
+      hostEl.innerHTML = `${date[i].host}`;
+      dateEl.innerHTML = `${date[i].date}`;
+    }
+
+    // const imgEl = document.createElement(`a`);
+    // const infoEl = document.createElement(`info`);
+    // const hostEl = document.createElement(`host`);
+    // const dateEl = document.createElement(`h3`);
 
 
-    conEl[0].append(imgEl);
-    conEl[0].append(infoEl);
-    conEl[0].append(hostEl);
-    conEl[0].append(dateEl);
+    // conEl[0].append(imgEl);
+    // conEl[0].append(infoEl);
+    // conEl[0].append(hostEl);
+    // conEl[0].append(dateEl);
 
-    imgEl.innerHTML = `<img src = "${date[0].img}" alt="이미지">`;
-    infoEl.innerHTML = `<h3>${date[0].info}</h3>`;
-    hostEl.innerHTML = `<h3>${date[0].host}</h3>`;
-    dateEl.innerHTML = `<h3>${date[0].date}</h3>`;
+    // imgEl.innerHTML = `<img src = "${date[0].img}" alt="이미지">`;
+    // infoEl.innerHTML = `<h3>${date[0].info}</h3>`;
+    // hostEl.innerHTML = `<h3>${date[0].host}</h3>`;
+    // dateEl.innerHTML = `<h3>${date[0].date}</h3>`;
 
-    const img01El = document.createElement(`a`);
-    const info01El = document.createElement(`info`);
-    const host01El = document.createElement(`host`);
-    const date01El = document.createElement(`h3`);
-
-    conEl[1].append(img01El);
-    conEl[1].append(info01El);
-    conEl[1].append(host01El);
-    conEl[1].append(date01El);
-
-    img01El.innerHTML = `<img src = "${date[1].img}" alt="이미지">`;
-    info01El.innerHTML = `<h3>${date[1].info}</h3>`;
-    host01El.innerHTML = `<h3>${date[1].host}</h3>`;
-    date01El.innerHTML = `<h3>${date[1].date}</h3>`;
 
 
     </script>
