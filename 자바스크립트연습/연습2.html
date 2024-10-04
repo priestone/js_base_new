@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading{
+            width: 100px;
+            height: 100px;
+            border: 10px solid gray;
+            border-radius: 50%;
+            border-color: grey transparent gray transparent;
+            animation: loading_ani 2s infinite;   
+            position: fixed;
+            top: 49%;
+            left: 49%;
+        }
+
+        @keyframes loading_ani {
+            0%{
+                transform: rotate(0);
+            }
+
+            50%{
+                transform: rotate(360deg);
+            }
+
+            100%{
+                transform: rotate(0);
+            }
+        }
+
+        .active{
+            display: none;
+        }
+
+        .con_wrap{
+            width: 500px;
+            height: 500px;
+            background-color: rgb(247, 215, 167);
+            position: relative;
+            border-radius: 24px;
+        }
+
+        .con_wrap h3{
+            font-size: 40px;
+            /* text-align: center; */
+            font-weight: 900;
+            position: absolute;
+            left: 33%;
+            top: 65px;
+        }
+
+        .con{
+            width: 50px;
+            height: 50px;
+            background-color: rgb(141, 141, 141);
+            border-radius: 50%;
+            margin-right: 30px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+        }
+
+        .con:nth-child(2){
+            top: 35%;
+        }
+
+        .con:nth-child(4){
+            top: 65%;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+
+        <div class="loading"></div>
+
+        <div class="con_wrap active">
+            <h3>요리 비법</h3>
+            <div class="con"></div>
+            <div class="con"></div>
+            <div class="con"></div>
+        </div>
+
+    </div>
+
+    <script>
+
+        const loading = document.querySelector(`.loading`);
+        const conwrapEl = document.querySelector(`.con_wrap.active`);
+
+        const timeout = () => {
+            loading.classList.add(`active`);
+            conwrapEl.classList.remove(`active`);
+        }
+
+        setTimeout(timeout,3000);
+
+    </script>
+    
+</body>
+</html>

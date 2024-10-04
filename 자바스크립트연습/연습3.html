@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.03 스터디문제</title>
+    <style>
+
+.body_active {
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+}
+
+.section_1 {
+  margin-top: 200px;
+  width: 90%;
+  margin: 200px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.content {
+  width: 13vw;
+  overflow: hidden;
+  position: relative;
+  /* background-color: teal; */
+}
+
+.content a {
+  position: relative;
+  width: 13vw;
+  height: 13vw;
+  border-radius: 20px;
+  overflow: hidden;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  height: 100%;
+  display: block;
+}
+
+.info {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 10px;
+  letter-spacing: -2px;
+}
+
+.host {
+  color: gray;
+}
+
+.toggle {
+  margin: 0 auto;
+  width: 80px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+  position: relative;
+}
+
+.circle {
+  width: 25px;
+  height: 25px;
+  background-color: gainsboro;
+  border-radius: 100%;
+  position: relative;
+  top: 2.5px;
+  left: 2.5px;
+}
+
+.active {
+  background-color: rgb(65, 255, 65);
+}
+
+.toggle.active .circle {
+  left: 52.5px;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <section class="section_1">
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+    </section>
+
+    <div class="toggle">
+        <div class="circle"></div>
+    </div>
+
+
+    <script>
+
+        const date = [
+        {
+            img: 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEzMTA4OTQ5ODA0MDcwMTE4Mw%3D%3D/original/4f7a276e-9995-4b32-bda6-300de0619b25.png?im_w=720&im_q=highq',
+            id: 0,
+            alt: 'img',
+            info: "프린스의 '퍼플 레인' 하우스",
+            host: '호스트: 웬디 님과 리사 님',
+            date: '9월부터 예약 가능'
+        },
+        {
+            id: 1,
+            img: 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEyNjMyMzc5Mzc2MTc3OTEzMg%3D%3D/original/01819c16-43a1-4aee-9957-9edce6eb8e16.png?im_w=720&im_q=highq',
+            alt: 'img',
+            info: "거실에서 펼쳐지는 도자 캣의 단독 공연",
+            host: '호스트: 도자 캣 님',
+            date: '10월부터 예약 가능'
+        },
+        {
+            id: 2,
+            img: 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE3NzY2MTYzNDg4MjE2ODY1Nw%3D%3D/original/a332d020-4315-4f63-af71-444d46474939.png?im_w=1440&im_q=highq',
+            alt: 'img',
+            info: "폴리 포켓의 콤팩트에서 보내는 하룻밤",
+            host: '호스트: Polly Pocket 님',
+            date: '예약 마감'
+        },
+        {
+            id: 3,
+            img: 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE4NzE3Nzg1NDA2MjM5NzY2NQ%3D%3D/original/6989d581-3f67-4cd9-8cb6-5f5c226aedc6.png?im_w=1440&im_q=highq',
+            alt: 'img',
+            info: "폴리 포켓의 콤펙트에서 즐기는 플레",
+            host: '호스트: Polly Pocket 님',
+            date: '예약 마감'
+        },
+        {
+            id: 4,
+            img: 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEzMTA4NzY0ODgzNzUzNjQzNw%3D%3D/original/1077cfcd-29d5-42b7-adab-19e0b620e492.jpeg?im_w=1440&im_q=highq',
+            alt: 'img',
+            info: "케빈 하트와 함께하는 VIP체험",
+            host: '호스트: Kevin Hart 님',
+            date: '예약 마감'
+        },
+        {
+            id: 5,
+            img: 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEyNjIzMTk3NDU3MjE4Nzg2NA%3D%3D/original/f4cbe542-3ce0-4c6f-a8f1-d2120c1b2420.jpeg?im_w=1440&im_q=highq',
+            alt: 'img',
+            info: "엑스 맨션에서 훈련하기",
+            host: '호스트: Jubilee 님',
+            date: '예약 마감'
+        },
+        ]
+
+
+    const section = document.querySelector(`.section_1`);
+
+    const conEl = document.querySelectorAll(`.content`);
+    const toggleEl = document.querySelector(`.toggle`);
+
+    toggleEl.addEventListener(`click`,() => {
+      toggleEl.classList.toggle(`active`);
+      section.parentNode.classList.toggle(`body_active`);
+    });
+
+    for(let i = 0; i < conEl.length; i++){
+      const imgEl = document.createElement(`a`);
+      const infoEl = document.createElement(`info`);
+      const hostEl = document.createElement(`host`);
+      const dateEl = document.createElement(`h3`);
+
+      conEl[i].append(imgEl);
+      conEl[i].append(infoEl);
+      conEl[i].append(hostEl);
+      conEl[i].append(dateEl);
+
+      imgEl.innerHTML = `<img src = "${date[i].img}" alt="이미지">`;
+      infoEl.innerHTML = `${date[i].info}`;
+      hostEl.innerHTML = `${date[i].host}`;
+      dateEl.innerHTML = `${date[i].date}`;
+    }
+
+    // const imgEl = document.createElement(`a`);
+    // const infoEl = document.createElement(`info`);
+    // const hostEl = document.createElement(`host`);
+    // const dateEl = document.createElement(`h3`);
+
+
+    // conEl[0].append(imgEl);
+    // conEl[0].append(infoEl);
+    // conEl[0].append(hostEl);
+    // conEl[0].append(dateEl);
+
+    // imgEl.innerHTML = `<img src = "${date[0].img}" alt="이미지">`;
+    // infoEl.innerHTML = `<h3>${date[0].info}</h3>`;
+    // hostEl.innerHTML = `<h3>${date[0].host}</h3>`;
+    // dateEl.innerHTML = `<h3>${date[0].date}</h3>`;
+
+
+
+    </script>
+</body>
+</html>
