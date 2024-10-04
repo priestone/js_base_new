@@ -24,6 +24,10 @@ const wrapEl = document.querySelector(`.wrap`);
 const avatarAll = document.querySelectorAll(`.avatar`);
 const usernameAll = document.querySelectorAll(`.username`);
 const bgAll = document.querySelectorAll(`.bg`);
+const menuEl = document.querySelector(`.menu`);
+const menuWrapEl = document.querySelector(`.menu_wrap`);
+
+let isClicked = true;
 
 for(let i = 0; i <users.length; i++){
     avatarAll[i].innerHTML = `<img src="${users[i].avatarUrl}" alt="유저이미지">`;
@@ -40,5 +44,17 @@ const heartHandler = (e) => {
     };
 }
 
+const menuHandler = () => {
+    if(isClicked === true){
+        menuWrapEl.classList.add(`menu_active`);
+        isClicked = false;
+    }else if(isClicked === false){
+        menuWrapEl.classList.remove(`menu_active`);
+        isClicked = true;
+    }
+}
+
+menuEl.addEventListener(`click`,menuHandler);
 wrapEl.addEventListener(`click`, heartHandler);
+
 
