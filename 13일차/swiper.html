@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swiper</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .swiper {
+            width: 600px;
+            height: 300px;
+        }
+
+        /* 위 css 스타일로 수정 가능하다 */
+
+    </style>
+</head>
+<body>
+
+    <!-- Slider main container -->
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev prev"></div>
+        <div class="swiper-button-next"></div>
+    
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+
+        <!-- =>위 코드는 건들지 말아야함, class를 추가하여 내껄로 사용은 가능 -->
+  </div>
+
+  <script>
+
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        // direction: 'vertical',
+        loop: true,
+    
+        // If we need pagination
+        pagination: {
+        el: '.swiper-pagination',
+        },
+  
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.prev',
+        },
+  
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+
+        autoplay: {
+            delay: 1000,
+        },
+    });
+
+  </script>
+    
+</body>
+</html>
+
+<!-- *swiper 사용
+1. 구글 swiper 사이트 접속
+2. Get started 클릭
+3. Use Swiper form CDN 안속 링크 복붙하기 (위에꺼) -->
+
+<!-- *플러그인
+=>외부에서 제작한 코드를 가져와 사용함
+=>플러그인을 잘못 사용하게되면, 작동도 안됨,
+사이트 또는 앱이 느려짐, 충돌이 일어남
+
+*라이브러리
+=>플러그인들의 집합체 -->
