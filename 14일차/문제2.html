@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제 2</title>
+    <style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.progress{
+    height: 10px;
+    background-color: lightgray;
+}
+
+.bar{
+    width: 0;
+    height: 100%;
+    background-color: rosybrown;
+}
+
+section{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section h3{
+    font-size: 50px;
+}
+
+.section_1{
+    background-color: lightsalmon;
+}
+
+.section_2{
+    padding: 100px 0;
+    display: block;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 30px;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+
+.con_wrap{
+    padding: 0 250px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.con{
+    width: 32%;
+    height: 500px;
+    background-color: lightgray;
+}
+
+.section_3{
+    height: 700px;
+    background-color: lightgray;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+
+        <header>
+            <div class="progress">
+                <div class="bar"></div>
+            </div>
+        </header>
+
+        <section class="section_1">
+            <h3>section</h3>
+        </section>
+
+        <section class="section_2">
+
+            <h3 class="title">section title</h3>
+            <div class="con_wrap">
+                <div class="con"></div>
+                <div class="con"></div>
+                <div class="con"></div>
+            </div>
+
+        </section>
+
+        <section class="section_3">
+            <h3>section</h3>
+        </section>
+
+    </div>
+
+    <script>
+
+        const barEl = document.querySelector(`.bar`);
+        const secEl = document.querySelectorAll(`section`);
+        const headerEl = document.querySelector(`header`);
+        const wrapEl = document.querySelector(`.wrap`);
+
+        const handleScroll = () => {
+            const pageY = pageYOffset;
+            // const headY = headerEl.offsetHeight;
+            // const secY01 = secEl[0].offsetHeight;
+            // const secY02 = secEl[1].offsetHeight;
+            // const secY03 = secEl[2].offsetHeight;
+            const wrapY = wrapEl.offsetHeight;
+            // =>wrap의 높이값
+            const scrollY = window.innerHeight;
+            const useScroll = wrapY - scrollY;
+            const result = (pageY / useScroll) * 100;
+
+            // console.log(pageY);
+            // console.log(`wrap의 높이값 : ` + wrapY);
+            // console.log(`브라우저의 높이값 : ` + scrollY);
+            // console.log(wrapY - scrollY);
+            // =>전체높이 - 브라우저의 높이 = 순수 사용할 수 있는 높이값
+            console.log(result);
+
+            // console.log(secY01);
+            // console.log(secY02);
+            // console.log(secY03);
+
+            // barEl.style.width = `${pageY/ (headY+secY01+secY02+secY03) * 100}%`;
+            // barEl.style.width = `${pageY/ (wrapY-scrollY) * 100}%`;
+            barEl.style.width = result + "%";
+        };
+
+
+        window.addEventListener(`scroll`,handleScroll);
+
+    </script>
+    
+</body>
+</html>
