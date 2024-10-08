@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        form{
+            padding: 50px 100px;
+        }
+
+        input{
+            all: unset;
+            border-bottom: 1px solid #dbdbdb;
+            width: 100%;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        h2{
+            padding: 0 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <form>
+        <input type="text" placeholder="영화제목을 입력해주세요">
+    </form>
+
+    <h2></h2>
+
+    <script>
+
+        const formEl = document.querySelector(`form`);
+        const inputEl = document.querySelector(`input`);
+        const hEl = document.querySelector(`h2`);
+
+        const movies = [
+            {
+                id : 0,
+                title: "조커2",
+                desc: "조커영화 입니다"
+            },
+            {
+                id: 1,
+                title: "보보보",
+                desc: "무적 코털 보보보에요"
+            },
+            {
+                id: 2,
+                title: "따따베",
+                desc: "빵빵하게~"
+            },
+        ];
+
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            const inputValue = inputEl.value
+
+            const result = movies.filter((a) => a.title === inputValue);
+            console.log(result);
+
+            // hEl.innerText = result[0].title;
+            hEl.innerText = result[0].desc;
+
+            // if(inputValue === result){
+            //     hEl.innerText = `입니다`;
+            //     console.log(`dz`);
+            // }else{
+            //     hEl.innerText = `올바른 영화제목을 입력해주세요`;
+            // }
+
+
+        };
+
+        formEl.addEventListener(`submit`, handleSubmit);
+
+
+    </script>
+    
+</body>
+</html>
