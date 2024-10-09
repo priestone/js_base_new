@@ -24,7 +24,7 @@
             padding: 10px;
         }
 
-        h2{
+        h2, h3{
             padding: 0 100px;
         }
 
@@ -37,12 +37,14 @@
     </form>
 
     <h2></h2>
+    <h3></h3>
 
     <script>
 
         const formEl = document.querySelector(`form`);
         const inputEl = document.querySelector(`input`);
         const hEl = document.querySelector(`h2`);
+        const h3El = document.querySelector(`h3`);
 
         const movies = [
             {
@@ -70,7 +72,8 @@
             console.log(result);
 
             // hEl.innerText = result[0].title;
-            hEl.innerText = result[0].desc;
+            hEl.innerText = `영화 제목 : ${result[0].title} ` ;
+            h3El.innerText = `영화 설명 : ${result[0].desc} ` ;
 
             // if(inputValue === result){
             //     hEl.innerText = `입니다`;
@@ -78,7 +81,6 @@
             // }else{
             //     hEl.innerText = `올바른 영화제목을 입력해주세요`;
             // }
-
 
         };
 

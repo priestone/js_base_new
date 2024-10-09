@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>includes</title>
     <style>
 
         *{
@@ -50,47 +50,60 @@
             padding: 0 10px;
         }
 
+        .errorMessage{
+            color: crimson;
+            margin: 10px 0;
+        }
+
     </style>
 </head>
 <body>
 
     <form>
 
-        <input class="username" type="text" placeholder="ID">
+        <input class="email" type="text" placeholder="ID">
         <input class="password" type="password" placeholder="Password">
         <div class="errorMessage"></div>
         <button>로그인</button>
 
     </form>
-
+    
     <script>
+        // let text = "안녕하세요, 자바스크립트!";
+        // console.log(text.includes("자바스크립트")); // true
+        // console.log(text.includes("파이썬")); // false
 
         const formEl = document.querySelector(`form`);
-        const usernameEl = document.querySelector(`.username`);
+        const emailEl = document.querySelector(`.email`);
         const passwordEl = document.querySelector(`.password`);
         const errorMessageEl = document.querySelector(`.errorMessage`);
 
         const userInfo = {
             id: 0,
             username: "test",
-            password: "123"
+            password: "123",
+            email: "pncoding@naver.com"
         }
 
         const handleSubmit = (e) => {
             e.preventDefault();
 
-            const usernameInput = usernameEl.value;
+            const userInput = emailEl.value;
             const passwordInput = passwordEl.value;
 
-            if(usernameInput !== userInfo.username){
-                errorMessageEl.innerText = "아이디 틀림";
-            }else if(passwordInput !== userInfo.password){
-                errorMessageEl.innerText = "패스워드가 틀림";
-            }else{
-                alert("로그인 되었습니다");
-            };
+            const checkText = "@";
 
-        };
+            if(!userInput.includes(checkText)){
+                errorMessageEl.innerText = "올바른 표시형식을 지켜주세요"
+            }else if(userInput != userInfo.email ){
+                errorMessageEl.innerText = "아이디가 틀렸습니다."
+            }else if(passwordInput != userInfo.password){
+                errorMessageEl.innerText = "비밀번호가 틀렸습니다."
+            }else{
+                alert("로그인 성공!");
+            }
+
+        }
 
 
         formEl.addEventListener(`submit`, handleSubmit);
