@@ -72,15 +72,16 @@
             console.log(result);
 
             // hEl.innerText = result[0].title;
-            hEl.innerText = `영화 제목 : ${result[0].title} ` ;
-            h3El.innerText = `영화 설명 : ${result[0].desc} ` ;
+            // hEl.innerText = `영화 제목 : ${result[0].title} ` ;
+            // h3El.innerText = `영화 설명 : ${result[0].desc} ` ;
 
-            // if(inputValue === result){
-            //     hEl.innerText = `입니다`;
-            //     console.log(`dz`);
-            // }else{
-            //     hEl.innerText = `올바른 영화제목을 입력해주세요`;
-            // }
+            if(result.length !==0){
+                hEl.innerText = `영화 제목 : ${result[0].title} ` ;
+                h3El.innerText = `영화 설명 : ${result[0].desc} ` ;
+            }else{
+                hEl.innerText = `찾으시는 ${inputValue}이(가) 결과가 없습니다.` ;
+                h3El.innerText = `` ;
+            };
 
         };
 
