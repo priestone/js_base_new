@@ -103,3 +103,27 @@ header{
 .full_heart{
     color: red;
 }
+form{
+    width: 400px;
+}
+
+input{
+    all: unset;
+    width: 400px;
+    height: 30px;
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    /* padding: 10px; */
+    margin-top: 10px;
+}
+
+p{
+    width: 400px;
+    height: 30px;
+    border-bottom: #1d1d1d;
+    border-radius: 10px;
+    padding: 10px;
+    line-height: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+}

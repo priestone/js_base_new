@@ -22,11 +22,61 @@
                 <div class="heart">
                     <i class="fa-regular fa-heart" ></i>
                 </div>
+                <form>
+                    <input type="text" placeholder="댓글을 입력해주세요.">
+                </form>
+                <div class="comment"></div>
             </div>
     
         </div>
 
     </div>
+
+    <script>
+
+        const formEl = document.querySelector(`form`);
+        const inputEl = document.querySelector(`input`);
+        const commentEl = document.querySelector(`.comment`);
+        let review = 0;
+        const inputValue = inputEl.value;
+
+
+        const getComment = localStorage.getItem(String(review));
+
+        const loadComments = () => {
+            for(let i = 0; i <localStorage.length; i++){
+                const saveComment = localStorage.getItem(localStorage.key(i));
+                const pEl = document.createElement(`p`);
+                pEl.innerText = saveComment;
+                commentEl.append(pEl);
+            }
+        }
+
+
+        
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            
+            const inputValue = inputEl.value;
+            
+            localStorage.setItem(String(review), inputValue);
+            const getComment = localStorage.getItem(String(review));
+
+            if(inputValue.length > 0){
+                review ++;
+                const pEl = document.createElement(`p`);
+                commentEl.append(pEl);
+                pEl.innerText = getComment;
+                inputEl.value = "";
+            }
+            
+        }
+
+        loadComments();
+        
+        formEl.addEventListener(`submit`, handleSubmit);
+
+    </script>
     
 </body>
 </html>
