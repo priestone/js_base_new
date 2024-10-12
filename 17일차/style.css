@@ -117,8 +117,27 @@ input{
     margin-top: 10px;
 }
 
-p{
+.comment_box{
     width: 400px;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+}
+
+.comment{
+    width: 90%;
+}
+
+
+.x_box{
+    width: 10%;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+h4{
+    /* width: 400px; */
     height: 30px;
     border-bottom: #1d1d1d;
     border-radius: 10px;
@@ -127,3 +146,24 @@ p{
     font-size: 14px;
     margin-top: 10px;
 }
+
+p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+button{
+    all: unset;
+    width: 40px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    background-color: gold;
+    cursor: pointer;
+}
+
+

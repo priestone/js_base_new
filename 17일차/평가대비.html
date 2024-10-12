@@ -25,7 +25,7 @@
                 <form>
                     <input type="text" placeholder="댓글을 입력해주세요.">
                 </form>
-                <div class="comment"></div>
+                <div class="comment_box"></div>
             </div>
     
         </div>
@@ -36,47 +36,82 @@
 
         const formEl = document.querySelector(`form`);
         const inputEl = document.querySelector(`input`);
-        const commentEl = document.querySelector(`.comment`);
+        const commentEl = document.querySelector(`.comment_box`);
+
         let review = 0;
-        const inputValue = inputEl.value;
 
 
-        const getComment = localStorage.getItem(String(review));
-
-        const loadComments = () => {
-            for(let i = 0; i <localStorage.length; i++){
-                const saveComment = localStorage.getItem(localStorage.key(i));
-                const pEl = document.createElement(`p`);
-                pEl.innerText = saveComment;
-                commentEl.append(pEl);
-            }
-        }
-
-
-        
         const handleSubmit = (e) => {
             e.preventDefault();
-            
             const inputValue = inputEl.value;
-            
-            localStorage.setItem(String(review), inputValue);
-            const getComment = localStorage.getItem(String(review));
 
-            if(inputValue.length > 0){
-                review ++;
-                const pEl = document.createElement(`p`);
-                commentEl.append(pEl);
-                pEl.innerText = getComment;
-                inputEl.value = "";
-            }
-            
+            const new_comment = document.createElement(`div`);
+            new_comment.classList.add(`new`);
+            commentEl.append(new_comment);
+            new_comment.innerText = inputValue;
+
+            localStorage.setItem(String(review),inputValue);
+
+
         }
 
-        loadComments();
-        
-        formEl.addEventListener(`submit`, handleSubmit);
+        formEl.addEventListener(`submit`,handleSubmit);
 
+
+
+// ------------------------밑에는 삭제까지 구현된 버전--------------------------------
+
+        // const formEl = document.querySelector('form');
+        // const inputEl = document.querySelector('input');
+        // const commentEl = document.querySelector('.comment_box');
+        // let review = localStorage.length;
+        // const inputValue = inputEl.value;
+    
+        // const loadComments = () => {
+        //     for (let i = 0; i < localStorage.length; i++) {
+        //         const saveComment = localStorage.getItem(localStorage.key(i));
+        //         createCommentElement(saveComment, localStorage.key(i));
+        //     }
+        // }
+    
+
+        // const createCommentElement = (text, key) => {
+        //     const pEl = document.createElement('p');
+        //     const deleteBtn = document.createElement('button');
+        //     deleteBtn.innerText = "삭제";
+        //     deleteBtn.classList.add('delete-btn');
+            
+
+        //     deleteBtn.addEventListener('click', () => {
+        //         localStorage.removeItem(key);
+        //         pEl.remove();
+        //     });
+    
+        //     pEl.innerText = text;
+        //     pEl.append(deleteBtn);
+        //     commentEl.append(pEl);
+        // }
+    
+
+        // const handleSubmit = (e) => {
+        //     e.preventDefault();
+            
+        //     const inputValue = inputEl.value;
+            
+        //     if (inputValue.length > 0) {
+        //         localStorage.setItem(String(review), inputValue);
+        //         createCommentElement(inputValue, review);
+        //         review++;
+        //         inputEl.value = "";
+        //     }
+        // }
+    
+        // loadComments(); 
+    
+        // formEl.addEventListener('submit', handleSubmit);
+    
     </script>
+    
     
 </body>
 </html>
