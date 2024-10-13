@@ -39,23 +39,50 @@
         const commentEl = document.querySelector(`.comment_box`);
 
         let review = 0;
-
-
+        
+        
         const handleSubmit = (e) => {
             e.preventDefault();
             const inputValue = inputEl.value;
+            const commentCount = localStorage.length;
 
             const new_comment = document.createElement(`div`);
             new_comment.classList.add(`new`);
             commentEl.append(new_comment);
             new_comment.innerText = inputValue;
+            inputEl.value = "";
 
-            localStorage.setItem(String(review),inputValue);
-
+            localStorage.setItem(`comment_${commentCount}`,inputValue);
+            // review++
+            // localStorage.setItem(`review`,review);
 
         }
 
+        const loadComments = () => {
+
+            for(let i = 0; i <localStorage.length; i++){
+
+                const loadComment = localStorage.getItem(`comment_${i}`);
+
+                // console.log(loadComment);
+                if(loadComment !== null && typeof loadComment === `string`){
+                        // const loadComment = localStorage.getItem(`comment_${i}`);
+                        const new_comment = document.createElement(`div`);
+                        new_comment.classList.add(`new`);
+                        commentEl.append(new_comment);
+                        new_comment.innerText = loadComment;
+                        console.log(`성공`);
+                    
+                    }
+                    
+                }
+        }
+            
+            
+        loadComments();
+            
         formEl.addEventListener(`submit`,handleSubmit);
+
 
 
 
