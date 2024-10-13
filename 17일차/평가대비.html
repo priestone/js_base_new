@@ -37,7 +37,7 @@
         const formEl = document.querySelector(`form`);
         const inputEl = document.querySelector(`input`);
         const commentEl = document.querySelector(`.comment_box`);
-
+        const commentCount = localStorage.length;
         let review = 0;
         
         
@@ -65,7 +65,7 @@
                 const loadComment = localStorage.getItem(`comment_${i}`);
 
                 // console.log(loadComment);
-                if(loadComment !== null && typeof loadComment === `string`){
+                if(loadComment !== null){
                         // const loadComment = localStorage.getItem(`comment_${i}`);
                         const new_comment = document.createElement(`div`);
                         new_comment.classList.add(`new`);
