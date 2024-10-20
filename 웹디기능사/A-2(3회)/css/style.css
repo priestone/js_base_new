@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    display: block;
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+
+/* reset end */
+
+.wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 25px;
+    position: relative;
+}
+
+.menu_bg{
+    width: 1200px;
+    height: 160px;
+    position: absolute;
+    /* display: none; */
+    z-index: 1;
+    top: 100px;
+    left: 0px;
+    background-color: #bbb;
+}
+
+.menu{
+    width: 800px;
+    height: 100px;
+    z-index: 2;
+}
+
+.navi{
+    width: 800px;
+    height: 100px;
+    display: flex;
+}
+
+.navi>li{
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: 900;
+    text-align: center;
+    background-color: #333;
+}
+
+.navi>li>a{
+    color: #fff;
+}
+
+.navi>li>a:hover{
+    color: #006478;
+}
+
+.submenu{
+    width: 200px;
+    height: 160px;
+    position: absolute;
+    display: none;
+    z-index: 3;
+    background-color: #bbb;
+}
+
+.submenu>li>a{
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 900;
+    text-align: center;
+    background-color: #bbb;
+    color: #333;
+}
+
+.submenu>li>a:hover{
+    background-color: #006478;
+}
+
+.logo{
+    width: 200px;
+    height: 40px;
+}
+
+.imgslide{
+    width: 1200px;
+    height: 300px;
+}
+
+.section_1{
+    width: 1200px;
+    height: 200px;
+    display: flex;
+}
+
+.notice{
+    width: 400px;
+    height: 200px;
+}
+
+.gallery{
+    width: 400px;
+    height: 200px;
+}
+
+.shortcut{
+    width: 400px;
+    height: 200px;
+}
+
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: #bbb;
+    display: flex;
+    justify-content: space-between
+}
+
+.copy{
+    width: 550px;
+    height: 100px;
+}
+
+.site{
+    width: 400px;
+    height: 100px;
+}
+
+.sns{
+    width: 400px;
+    height: 50px;
+}
+
+.familysite{
+    width: 400px;
+    height: 50px;
+}
